@@ -1,0 +1,140 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+}
+
+@font-face {
+  font-family: "lexend_deca";
+  src: url("./assets/fonts/Lexend_Deca/LexendDeca-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "big_shoulders";
+  src: url("./assets/fonts/Big_Shoulders_Display/BigShouldersDisplay-VariableFont_wght.ttf");
+}
+
+body {
+  margin: 0;
+  background-color: lightgray;
+}
+
+h2 {
+  font-family: "big_shoulders", sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "lexend_deca", sans-serif;
+  line-height: 1.5rem;
+  opacity: 60%;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  color: white;
+  margin: 1rem;
+}
+
+.sedan {
+  padding: 2rem;
+  background-color: var(--bright-orange);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.suv {
+  padding: 2rem;
+  background-color: var(--dark-cyan);
+}
+
+.luxury {
+  padding: 2rem;
+  background-color: var(--very-dark-cyan);
+  border-bottom-left-radius:20px;
+  border-bottom-right-radius: 20px;
+}
+
+button {
+  padding: 1em;
+  border-radius: 25px;
+  color: var(--dark-cyan);
+  background-color: white;
+  width: 10rem;
+  font-size: 1rem;
+  margin: .8rem 0;
+  border: solid 1px white;
+}
+
+button:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.sedan-button:hover {
+  background-color: var(--bright-orange);
+}
+
+.suv-button:hover {
+  background-color: var(--dark-cyan);
+}
+
+.luxury-button:hover {
+  background-color: var(--very-dark-cyan);
+}
+
+@media (min-width: 600px) {
+  .wrapper {
+    max-height: 100dvh;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1000px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .sedan {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 20px;
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .suv {
+    border-radius: 0;
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .luxury {
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0;
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  button {
+    margin-top: 5rem;
+  }
+
+  img {
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+
+  @keyframes slidein {
+    from {
+      transform: translateX(-1500px);
+      background-color: white;
+    }
+
+    to {
+      transform: translateX(0%);
+    }
+  }
+}
