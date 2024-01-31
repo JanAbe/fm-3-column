@@ -43,6 +43,7 @@ p {
 }
 
 .sedan {
+  display: grid;
   padding: 2rem;
   background-color: var(--bright-orange);
   border-top-left-radius: 20px;
@@ -50,11 +51,13 @@ p {
 }
 
 .suv {
+  display: grid;
   padding: 2rem;
   background-color: var(--dark-cyan);
 }
 
 .luxury {
+  display: grid;
   padding: 2rem;
   background-color: var(--very-dark-cyan);
   border-bottom-left-radius:20px;
@@ -66,10 +69,12 @@ button {
   border-radius: 25px;
   color: var(--dark-cyan);
   background-color: white;
-  width: 10rem;
+  min-width: 5rem;
+  max-width: 10rem;
   font-size: 1rem;
   margin: .8rem 0;
   border: solid 1px white;
+  align-self: flex-end;
 }
 
 button:hover {
